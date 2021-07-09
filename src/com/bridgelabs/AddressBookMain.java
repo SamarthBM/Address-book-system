@@ -10,6 +10,7 @@ class contactInfo {
 	private String firstName, lastName, address, city, state, email;
 	private long zip, phoneNumber;
 
+	/* Generating setters and getters for class */
 	public String getFirstName() {
 		return firstName;
 	}
