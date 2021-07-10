@@ -5,10 +5,16 @@
 ***************************************************************/
 
 package com.bridgelabs;
-
+import java.util.ArrayList;
+import java.util.Scanner;
 class contactInfo {
 	private String firstName, lastName, address, city, state, email;
 	private long zip, phoneNumber;
+	
+	public String toString() {
+		return "First name= "+firstName + " Last name= " +lastName+" Address= "+address+" City= "+city+" State= "+state
+				+" Zip= "+zip+" Phone Number= "+phoneNumber+" E-mail= "+email;
+	}
 
 	/* Generating setters and getters for class */
 	public String getFirstName() {
@@ -78,9 +84,43 @@ class contactInfo {
 }
 
 public class AddressBookMain {
+	private static Scanner sc = new Scanner(System.in);
+	ArrayList<contactInfo> arrayPersonDetails = new ArrayList<>();
+	
+	public void addDetails() {
+		contactInfo contact_details = new contactInfo();
+		
+		System.out.println("Enter First name: ");
+		contact_details.setFirstName(sc.next());
+		System.out.println("Enter Last name: ");
+		contact_details.setLastName(sc.next());
+		System.out.println("Enter Address: ");
+		contact_details.setAddress(sc.next());
+		System.out.println("Enter your City: ");
+		contact_details.setCity(sc.next());
+		System.out.println("Enter your State: ");
+		contact_details.setState(sc.next());
+		System.out.println("Enter Zip code: ");
+		contact_details.setZip(sc.nextLong());
+		System.out.println("Enter your Phone Number: ");
+		contact_details.setPhoneNumber(sc.nextLong());
+		System.out.println("Enter your E-mail: ");
+		contact_details.setEmail(sc.next());
+		
+		arrayPersonDetails.add(contact_details);
+		System.out.println(arrayPersonDetails);
+		int i = 1;
+		arrayPersonDetails.get(i);
+		
+	}
+	
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Address Book program ");
+		
+		AddressBookMain final_details = new AddressBookMain();
+		
+		final_details.addDetails();
 
 	}
 
