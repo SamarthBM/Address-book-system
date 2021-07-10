@@ -128,8 +128,7 @@ public class AddressBookMain {
 		for (int i = 0; i < arrayPersonDetails.size(); i++) {
 			if (arrayPersonDetails.get(i).getFirstName().equals(confirm_name)) {
 				System.out.println("Select form below to change: ");
-				System.out.println(
-						"\n1.First Name\n2.Last Name\n3.Address\n4.city\n5.State\n6.Zip\n7.Mobile number\n8.Email");
+				System.out.println("\n1.First Name\n2.Last Name\n3.Address\n4.city\n5.State\n6.Zip\n7.Mobile number\n8.Email");
 				int edit = sc.nextInt();
 
 				switch (edit) {
