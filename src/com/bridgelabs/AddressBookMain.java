@@ -9,82 +9,6 @@ package com.bridgelabs;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class contactInfo {
-	private String firstName, lastName, address, city, state, email;
-	private long zip, phoneNumber;
-
-	public String toString() {
-		return "First name= " + firstName + " Last name= " + lastName + " Address= " + address + " City= " + city
-				+ " State= " + state + " Zip= " + zip + " Phone Number= " + phoneNumber + " E-mail= " + email;
-	}
-
-	/* Generating setters and getters for class */
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public long getZip() {
-		return zip;
-	}
-
-	public void setZip(long zip) {
-		this.zip = zip;
-	}
-
-	public long getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(long phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-}
-
 public class AddressBookMain {
 	static Scanner sc = new Scanner(System.in);
 	static ArrayList<contactInfo> arrayPersonDetails = new ArrayList<>();
@@ -174,7 +98,7 @@ public class AddressBookMain {
 		}
 
 	}
-	
+
 	/*
 	 * Method to Delete contact details by confirming first name of person.
 	 */
@@ -182,24 +106,25 @@ public class AddressBookMain {
 		System.out.println("Confirm your first name to delete contact");
 		String confirmName = sc.next();
 		for (int i = 0; i < arrayPersonDetails.size(); i++) {
-			
+
 			if (arrayPersonDetails.get(i).getFirstName().equals(confirmName)) {
-				
+
 				arrayPersonDetails.remove(i);
 			} else {
 				System.out.println("Enter valid first name");
-				break;
+
 			}
-			System.out.println("User details deleted.");
-			System.out.println(arrayPersonDetails);
+
 		}
+		System.out.println("User details deleted.");
+		System.out.println(arrayPersonDetails);
 
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Address Book program ");
 
-		AddressBookMain final_details = new AddressBookMain();
+		AddressBookMain userDetails = new AddressBookMain();
 
 		while (true) {
 			System.out.println("Choose what you want to do: ");
@@ -207,13 +132,13 @@ public class AddressBookMain {
 			int choose = sc.nextInt();
 			switch (choose) {
 			case 1:
-				final_details.addDetails();
+				userDetails.addDetails();
 				break;
 			case 2:
-				final_details.editDetails();
+				userDetails.editDetails();
 				break;
 			case 3:
-				final_details.deleteUser();
+				userDetails.deleteUser();
 				break;
 			default:
 				System.out.println("Choose valid option");
