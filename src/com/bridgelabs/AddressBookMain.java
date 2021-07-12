@@ -98,7 +98,7 @@ public class AddressBookMain {
 		}
 
 	}
-
+	
 	/*
 	 * Method to Delete contact details by confirming first name of person.
 	 */
@@ -106,17 +106,14 @@ public class AddressBookMain {
 		System.out.println("Confirm your first name to delete contact");
 		String confirmName = sc.next();
 		for (int i = 0; i < arrayPersonDetails.size(); i++) {
-
+			
 			if (arrayPersonDetails.get(i).getFirstName().equals(confirmName)) {
-
+				
 				arrayPersonDetails.remove(i);
 			} else {
 				System.out.println("Enter valid first name");
-
-			}
-
-		}
-		System.out.println("User details deleted.");
+			}		
+		}System.out.println("User details deleted.");
 		System.out.println(arrayPersonDetails);
 
 	}
@@ -125,21 +122,23 @@ public class AddressBookMain {
 		System.out.println("Welcome to Address Book program ");
 
 		AddressBookMain userDetails = new AddressBookMain();
-
+		userDetails.addDetails();
+		
 		while (true) {
 			System.out.println("Choose what you want to do: ");
-			System.out.println("1.Add details.\n2.Edit details.\n3.Delete contact.");
+			System.out.println("1.Edit details.\n2.Delete contact.\n3.Add another person details");
 			int choose = sc.nextInt();
 			switch (choose) {
 			case 1:
-				userDetails.addDetails();
-				break;
-			case 2:
 				userDetails.editDetails();
 				break;
-			case 3:
+			case 2:
 				userDetails.deleteUser();
 				break;
+			case 3:
+				userDetails.addDetails();
+				break;
+			
 			default:
 				System.out.println("Choose valid option");
 				break;
