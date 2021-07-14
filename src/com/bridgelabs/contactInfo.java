@@ -7,16 +7,17 @@
 package com.bridgelabs;
 
 
-class contactInfo {
+public class contactInfo {
 	private String firstName, lastName, address, city, state, email;
 	private long zip, phoneNumber;
 
 	public String toString() {
-		return "First name= " + firstName + " Last name= " + lastName + " Address= " + address + " City= " + city
-				+ " State= " + state + " Zip= " + zip + " Phone Number= " + phoneNumber + " E-mail= " + email;
+		return " First name= " + firstName + " Last name= " + lastName + " Address= " + address + " City= " + city
+				+ " State= " + state + " Zip= " + zip + " Phone Number= " + phoneNumber + " E-mail= "  + email;
 	}
 
 	/* Generating setters and getters for class */
+	
 	public String getFirstName() {
 		return firstName;
 	}
